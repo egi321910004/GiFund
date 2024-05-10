@@ -1,9 +1,44 @@
-import React from "react";
+import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { Hero, Container } from "react-bulma-components";
 import backgroundImage from "../../../assets/video.mp4";
 import logonav from "../../../assets/gifundlogov2.png";
 import CaptchaUser from "../../../components/utils/CaptchaUser";
+import { useNavigate } from "react-router-dom";
+
+interface LoginFormData {
+  email: string;
+  password: string;
+}
+
 export default function index() {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState<LoginFormData>({
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  useEffect(() => {
+    const authData = localStorage.getItem("auth");
+    if (authData) {
+      navigate("/home");
+    }
+  }, [navigate]);
+
+  const handleLogin = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    localStorage.setItem("auth", JSON.stringify(formData));
+    navigate("/home");
+  };
+
   return (
     <Hero>
       <video
@@ -28,7 +63,7 @@ export default function index() {
             <div className="hero is-fullheight">
               <div className="hero-body is-justify-content-center ">
                 <div className="columns is-flex is-flex-direction-column box">
-                  <form className="">
+                  <form className="" onSubmit={handleLogin}>
                     <div className="is-flex is-justify-content-center has-text-centered">
                       <img className="image is-128x128" src={logonav} />
                     </div>
@@ -38,7 +73,10 @@ export default function index() {
                       <input
                         className="input is-primary"
                         type="text"
+                        name="email"
                         placeholder="Email address"
+                        value={formData.email}
+                        onChange={handleInputChange}
                       />
                     </div>
                     <div className="column">
@@ -46,7 +84,10 @@ export default function index() {
                       <input
                         className="input is-primary"
                         type="password"
+                        name="password"
                         placeholder="Password"
+                        value={formData.password}
+                        onChange={handleInputChange}
                       />
                     </div>
                     <CaptchaUser />

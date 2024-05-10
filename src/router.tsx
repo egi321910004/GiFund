@@ -1,12 +1,19 @@
-import { Route, Routes } from "react-router-dom";
+import React from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
 import LoginPage from "./pages/Auth/Login";
 import HomePage from "./pages/Home/Client";
+
 export default function Mainrouter() {
+  const isAuthenticated = !!localStorage.getItem("auth");
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/Login" element={<LoginPage />} />
+        <Route
+          path="/"
+          element={isAuthenticated ? <HomePage /> : <Navigate to="/login" />}
+        />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </>
   );

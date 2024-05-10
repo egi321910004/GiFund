@@ -1,4 +1,4 @@
- <img src="./src/assets/Capture.PNG" alt="img" width='80px'/>
+ <img src="./src/assets/Capture.PNG" alt="img" width='100%'/>
 
 ## :dart: About
 
