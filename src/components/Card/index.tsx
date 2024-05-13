@@ -1,11 +1,9 @@
-// CardComponent.tsx
 import React from "react";
 import {
   Card as BulmaCard,
   Button,
   Content,
   Heading,
-  Image,
   Media,
 } from "react-bulma-components";
 
@@ -22,7 +20,6 @@ const CardComponent: React.FC<CardProps> = ({
   subtitle,
   image,
   content,
-  avatar,
 }) => {
   return (
     <div

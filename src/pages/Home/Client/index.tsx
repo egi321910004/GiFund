@@ -1,6 +1,4 @@
-import React from "react";
 import Navbar from "../../../components/Navbar";
-import datadummy from "../../../services/dummy";
 import CardComponent from "../../../components/Card";
 import avatar1 from "../../../assets/a1.jpg";
 import avatar2 from "../../../assets/a2.jpg";

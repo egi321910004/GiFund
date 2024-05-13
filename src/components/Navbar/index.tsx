@@ -1,5 +1,3 @@
-import { Navbar } from "react-bulma-components";
-
 export default function index() {
   return (
     <>

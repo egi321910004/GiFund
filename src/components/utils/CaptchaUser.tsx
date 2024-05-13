@@ -1,10 +1,4 @@
-import React, { Component } from "react";
-import {
-  loadCaptchaEnginge,
-  LoadCanvasTemplate,
-  LoadCanvasTemplateNoReload,
-  validateCaptcha,
-} from "react-simple-captcha";
+import { loadCaptchaEnginge, LoadCanvasTemplate } from "react-simple-captcha";
 
 class CaptchaUser extends Component {
   componentDidMount() {

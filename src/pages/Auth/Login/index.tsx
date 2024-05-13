@@ -1,8 +1,7 @@
-import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { Hero, Container } from "react-bulma-components";
 import backgroundImage from "../../../assets/video.mp4";
 import logonav from "../../../assets/gifundlogov2.png";
-import CaptchaUser from "../../../components/utils/CaptchaUser";
 import { useNavigate } from "react-router-dom";
 
 interface LoginFormData {
@@ -90,7 +89,7 @@ export default function index() {
                         onChange={handleInputChange}
                       />
                     </div>
-                    <CaptchaUser />
+                    {/* <CaptchaUser /> */}
                     <div className="column">
                       <button
                         className="button is-primary is-fullwidth"
