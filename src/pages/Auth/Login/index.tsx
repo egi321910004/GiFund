@@ -89,7 +89,6 @@ export default function index() {
                         onChange={handleInputChange}
                       />
                     </div>
-                    {/* <CaptchaUser /> */}
                     <div className="column">
                       <button
                         className="button is-primary is-fullwidth"
