@@ -1,10 +1,12 @@
 import Navbar from "../../../components/Navbar";
 import CardComponent from "../../../components/Card";
+import Hero from "../../../components/Hero";
 import avatar1 from "../../../assets/a1.jpg";
 import avatar2 from "../../../assets/a2.jpg";
 import avatar3 from "../../../assets/a3.png";
 import avatar4 from "../../../assets/a5.png";
 import avatar5 from "../../../assets/a10.png";
+
 interface DataDummyItem {
   title: string;
   subtitle: string;
@@ -58,6 +60,7 @@ export default function index() {
   return (
     <div>
       <Navbar />
+      <Hero />
       <div
         style={{
           display: "flex",
