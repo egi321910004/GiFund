@@ -6,6 +6,7 @@ import avatar2 from "../../../assets/a2.jpg";
 import avatar3 from "../../../assets/a3.png";
 import avatar4 from "../../../assets/a5.png";
 import avatar5 from "../../../assets/a10.png";
+import { Button } from "react-bulma-components";
 
 interface DataDummyItem {
   title: string;
@@ -71,6 +72,11 @@ export default function index() {
         {dumyService.map((data: DataDummyItem, index: number) => (
           <CardComponent key={index} {...data} />
         ))}
+      </div>
+      <div
+        style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
+      >
+        <Button>1</Button>
       </div>
     </div>
   );
