@@ -35,7 +35,7 @@ export default function index() {
   const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     localStorage.setItem("auth", JSON.stringify(formData));
-    navigate("/Home");
+    navigate("/");
   };
 
   return (
